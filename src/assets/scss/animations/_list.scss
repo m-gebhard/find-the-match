@@ -1,0 +1,17 @@
+.list-leave {
+    position: absolute;
+    z-index: -1;
+}
+
+.list-leave-active {
+    opacity: 0;
+}
+
+.list-enter {
+    transform: scale(0.25);
+    opacity: 0;
+}
+
+.list-move {
+    transition: transform $duration-fast;
+}

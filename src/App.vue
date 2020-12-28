@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div id="app">
+        <game-field v-if="getGameState === getGameStates.PLAYING"></game-field>
+        <results-screen v-else-if="getGameState === getGameStates.GAME_OVER"></results-screen>
+        <start-screen v-else></start-screen>
+    </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+    import { mapGetters } from 'vuex';
+    import { GAME_STATE } from './utils/gameConfig';
+    import GameField      from './components/GameField';
+    import StartScreen    from './components/StartScreen';
+    import ResultsScreen  from './components/ResultsScreen';
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name:       'app',
+        components: { ResultsScreen, StartScreen, GameField },
+        computed:   {
+            ...mapGetters(['getGameState']),
+
+            getGameStates() {
+                return GAME_STATE;
+            }
+        },
+    };
 </script>
-
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

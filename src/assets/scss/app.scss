@@ -1,0 +1,11 @@
+// setup
+@import './setup/variables';
+@import './setup/general';
+// animations
+@import './animations/list';
+// components
+@import './components/start-screen';
+@import './components/game-field';
+@import './components/game-card';
+@import './components/status-header';
+@import './components/results';

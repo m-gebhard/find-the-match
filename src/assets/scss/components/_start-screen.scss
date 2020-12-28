@@ -1,0 +1,82 @@
+.start-screen {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    justify-self: center;
+
+    padding: 20px;
+    text-align: center;
+    min-width: 80vw;
+    background: $color-grey-light;
+    border-radius: $border-radi-default;
+    margin-top: auto;
+    margin-bottom: auto;
+
+    @media screen and (min-width: 540px) {
+        min-width: 350px;
+    }
+}
+
+.start-screen__options {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+
+    button {
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: rgba(#FFF, .18);
+        padding: 8px 12px;
+        margin-top: 20px;
+        color: $color-font;
+        text-transform: uppercase;
+        font-family: inherit;
+        font-weight: 300;
+        border-radius: $border-radi-default;
+        transition: background $duration-fast;
+
+        svg {
+            transition: transform $duration-fast;
+            margin-left: 5px;
+        }
+
+        &:hover {
+            background: rgba(#FFF, .1);
+
+            svg {
+                transform: translateX(3px);
+            }
+        }
+    }
+}
+
+.start-screen__options-group {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: left;
+    margin-bottom: 12px;
+
+    label {
+        font-weight: 300;
+    }
+
+    input, select {
+        border: none;
+        background: rgba(#FFF, .18);
+        padding: 8px 12px;
+        margin-top: 5px;
+        color: $color-font;
+        font-family: inherit;
+        border-radius: $border-radi-default;
+    }
+
+    select {
+        -webkit-appearance: none;
+        background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+        background-repeat: no-repeat;
+        background-position-x: 100%;
+        background-position-y: 5px;
+    }
+
+}
