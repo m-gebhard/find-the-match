@@ -13,6 +13,12 @@
     @media all and (min-width: 540px) {
         margin-top: 0;
     }
+
+    @media screen and (min-width: 756px) {
+        .status-header__pairs {
+            display: flex;
+        }
+    }
 }
 
 .status-header__time {
@@ -31,7 +37,7 @@
 .status-header__pairs {
     padding: 0;
     flex: 3;
-    display: flex;
+    display: none;
     flex-flow: row wrap;
     margin-right: auto;
     list-style: none;

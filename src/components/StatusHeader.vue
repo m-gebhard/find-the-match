@@ -1,7 +1,8 @@
 <template>
     <nav class="status-header">
         <transition-group tag="ul" class="status-header__pairs" name="list">
-            <li v-for="(item, i) in getUniqueCards"
+            <li v-if="getUniqueCards.length < 10"
+                v-for="(item, i) in getUniqueCards"
                 :key="`cards-${i}`"
                 class="status-header__pairs-item"
                 :class="{'status-header__pairs-item--found': hasPairFound(item)}">
@@ -38,9 +39,6 @@
             },
             getUniqueCards() {
                 const sorted = this.cards.filter((v, i, a) => a.indexOf(v) === i);
-
-                // sorted.sort((_a, _b) => (_a.hide ? 1 : 0) - (_b.hide ? 1 : 0));
-
                 return [...new Set(sorted.map((_item) => _item.content))];
             },
         },
